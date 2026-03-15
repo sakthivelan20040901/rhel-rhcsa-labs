@@ -174,6 +174,43 @@ These skills are useful for **Linux administrators, DevOps engineers, and system
 
 ---
 
+## Generate Gmail App Password
+
+To allow the Python script to send emails through Gmail, you must use a **Google App Password** instead of your normal Gmail password.
+
+### Step 1 – Enable 2‑Step Verification
+
+1. Go to your Google Account settings.
+2. Navigate to **Security**.
+3. Enable **2‑Step Verification**.
+
+Link: [https://myaccount.google.com/security](https://myaccount.google.com/security)
+
+### Step 2 – Create an App Password
+
+1. In the **Security** section, open **App Passwords**.
+2. Select **Mail** as the app.
+3. Select **Other / Custom device** and give a name like `linux-alert-system`.
+4. Click **Generate**.
+
+Google will generate a 16‑character password like:
+
+```
+abcd efgh ijkl mnop
+```
+
+### Step 3 – Use the App Password in the Script
+
+Replace the password in your Python script:
+
+```python
+EMAIL_PASSWORD = "YOUR_APP_PASSWORD"
+```
+
+⚠️ **Important:** Never share your real email password in code repositories. Use environment variables or configuration files for better security.
+
+---
+
 ## Suggested Improvements
 
 Future improvements for this project:
